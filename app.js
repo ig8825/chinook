@@ -191,4 +191,11 @@ app.get('/pages', function(request, response) {
   });
 });
 
+app.listen(process.env.PORT, function() {
+  console.log("Strežnik je pognan!");
+})
 
+//preusmeri uporabnika iz / na zacetno stran - /artists/1
+app.get('/', function(request, response) {
+  response.redirect('/artists/1');
+});
